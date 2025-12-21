@@ -39,7 +39,7 @@ services:
       - dokploy-network
 
   db:
-    image: mariadb:11.8
+    image: mariadb:12.1
     hostname: db
     container_name: firefly_iii_db
     restart: unless-stopped
