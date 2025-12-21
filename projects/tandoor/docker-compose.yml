@@ -19,7 +19,7 @@ services:
   db:
     container_name: tandoor_db
     restart: unless-stopped
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     volumes:
       - ./postgresql:/var/lib/postgresql/data
     environment:
