@@ -43,9 +43,9 @@ services:
     volumes:
       - paperlessdb:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: ${PAPERLESS_DBHOST}
-      POSTGRES_USER: ${PAPERLESS_DBUSER}
-      POSTGRES_PASSWORD: ${PAPERLESS_DBPASS}
+      POSTGRES_DB: ${PAPERLESS_DBNAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
       - dokploy-network
 
