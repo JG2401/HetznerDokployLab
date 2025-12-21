@@ -22,7 +22,7 @@ services:
       TRUSTED_PROXIES: ${TRUSTED_PROXIES}
     networks:
       - dokploy-network
-      
+
   cron:
     image: alpine:3.23.2
     restart: unless-stopped
@@ -39,7 +39,7 @@ services:
       - dokploy-network
 
   db:
-    image: mariadb:11.8
+    image: mariadb:lts
     hostname: db
     container_name: firefly_iii_db
     restart: unless-stopped
