@@ -38,7 +38,7 @@ services:
 
   db:
     container_name: paperless-db
-    image: postgres:18
+    image: postgres:16
     restart: unless-stopped
     volumes:
       - paperlessdb:/var/lib/postgresql/data
