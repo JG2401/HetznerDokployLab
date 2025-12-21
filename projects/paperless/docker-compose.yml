@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+  paperless:
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.3
+    container_name: paperless
+    restart: unless-stopped
+    volumes:
+      - paperlessdata:/usr/src/paperless/data
+      - paperlessmedia:/usr/src/paperless/media
+      - paperlessexport:/usr/src/paperless/export
+      - paperlessconsume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: ${PAPERLESS_REDIS}
+      PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE}
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USER}
+      PAPERLESS_ADMIN_PASSWORD: ${PAPERLESS_ADMIN_PASSWORD}
+      PAPERLESS_OCR_LANGUAGE: ${PAPERLESS_OCR_LANGUAGE}
+      PAPERLESS_URL: https://${PAPERLESS_URL}
+      PAPERLESS_ALLOWED_HOSTS: ${PAPERLESS_ALLOWED_HOSTS}
+      PAPERLESS_DBHOST: ${PAPERLESS_DBHOST}
+      PAPERLESS_DBPASS: ${PAPERLESS_DBPASS}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - dokploy-network
+
+  redis:
+    image: redis:8.4.0
+    container_name: paperless-redis
+    restart: unless-stopped
+    volumes:
+      - paperlessredis:/user/local/etc/redis
+    networks:
+      - dokploy-network
+
+  db:
+    container_name: paperless-db
+    image: postgres:16
+    restart: unless-stopped
+    volumes:
+      - paperlessdb:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - dokploy-network
+
+volumes:
+  paperlessdb:
+  paperlessdata:
+  paperlessmedia:
+  paperlessexport:
+  paperlessconsume:
+  paperlessredis:
+
+networks:
+  dokploy-network:
+    external: true

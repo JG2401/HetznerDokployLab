@@ -1,0 +1,37 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  #firefly
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/firefly"
+    schedule:
+      interval: "daily"
+  #immich
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/immich"
+    schedule:
+      interval: "daily"
+  #it-tools
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/it-tools"
+    schedule:
+      interval: "daily"
+  #n8n
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/n8n"
+    schedule:
+      interval: "daily"
+  #paperless
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/paperless"
+    schedule:
+      interval: "daily"
+  #tandoor
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/tandoor"
+    schedule:
+      interval: "daily"
