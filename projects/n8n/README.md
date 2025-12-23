@@ -22,3 +22,12 @@
 - Container Port: `5678`
 - HTTPS: `true`
 - Certificate Provider: `Let's Encrypt`
+
+### Volume Backups
+
+- Task Name: `n8n`
+- Schedule `0 0 * * *`
+- Service Name: `n8n`
+- Volume: `n8n-n8n-xxx`
+- Keep Latest Backups: `7`
+- Enabled: true
