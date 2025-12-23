@@ -9,29 +9,29 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/firefly"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   #it-tools
   - package-ecosystem: "docker-compose"
     directory: "/projects/it-tools"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   #n8n
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   #tandoor
   - package-ecosystem: "docker-compose"
     directory: "/projects/tandoor"
     schedule:
-      interval: "daily"
+      interval: "monthly"
