@@ -15,6 +15,13 @@ POSTGRES_PASSWORD: #database password
 POSTGRES_DB: #database name
 SECRET_KEY: #32 digits token - use [it-tools token-generator](https://it-tools.tech/token-generator?length=32) to get one
 
+### Domains
+
+- Service Name: `tandoor`
+- Container Port: `80`
+- HTTPS: `true`
+- Certificate Provider: `Let's Encrypt`
+
 ### Volume Backups
 
 - Task Name: `staticfiles`
