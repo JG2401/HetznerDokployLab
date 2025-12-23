@@ -14,3 +14,12 @@ POSTGRES_USER: #database user
 POSTGRES_PASSWORD: #database password
 POSTGRES_DB: #database name
 SECRET_KEY: #32 digits token - use [it-tools token-generator](https://it-tools.tech/token-generator?length=32) to get one
+
+### Volume Backups
+
+- Task Name: `staticfiles`
+- Schedule `0 0 * * *`
+- Service Name: `tandoor`
+- Volume: `tandoor-tandoor-xxx`
+- Keep Latest Backups: `7`
+- Enabled: true
