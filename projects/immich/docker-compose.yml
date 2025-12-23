@@ -25,6 +25,7 @@ services:
       REDIS_PORT: ${REDIS_PORT}
       REDIS_DBINDEX: ${REDIS_DBINDEX}
       TZ: ${TZ}
+      UPLOAD_LOCATION: ${UPLOAD_LOCATION}
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:2283/server-info/ping"]
