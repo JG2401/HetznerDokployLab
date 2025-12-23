@@ -5,7 +5,7 @@ services:
     image: ghcr.io/immich-app/immich-server:v2.1.0
 
     volumes:
-      - immich-library:/usr/src/app/upload
+      - /mnt/storagebox-crypt/immich/library:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       immich-redis:
@@ -16,17 +16,14 @@ services:
       PORT: 2283
       SERVER_URL: ${SERVER_URL}
       FRONT_BASE_URL: ${FRONT_BASE_URL}
-      # Database Configuration
       DB_HOSTNAME: ${DB_HOSTNAME}
       DB_PORT: ${DB_PORT}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE_NAME: ${DB_DATABASE_NAME}
-      # Redis Configuration
       REDIS_HOSTNAME: ${REDIS_HOSTNAME}
       REDIS_PORT: ${REDIS_PORT}
       REDIS_DBINDEX: ${REDIS_DBINDEX}
-      # Server Configuration
       TZ: ${TZ}
     restart: always
     healthcheck:
@@ -103,5 +100,4 @@ networks:
 volumes:
   immich-model-cache:
   immich-postgres:
-  immich-library:
-  immich-redis-data: 
+  immich-redis-data:
