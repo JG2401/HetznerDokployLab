@@ -5,10 +5,10 @@ services:
     container_name: paperless
     restart: unless-stopped
     volumes:
-      - paperlessdata:/usr/src/paperless/data
-      - paperlessmedia:/usr/src/paperless/media
-      - paperlessexport:/usr/src/paperless/export
-      - paperlessconsume:/usr/src/paperless/consume
+      - /mnt/storagebox-crypt/paperless/data:/usr/src/paperless/data
+      - /mnt/storagebox-crypt/paperless/media:/usr/src/paperless/media
+      - /mnt/storagebox-crypt/paperless/export:/usr/src/paperless/export
+      - /mnt/storagebox-crypt/paperless/consume:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: ${PAPERLESS_REDIS}
       PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE}
@@ -51,10 +51,6 @@ services:
 
 volumes:
   paperlessdb:
-  paperlessdata:
-  paperlessmedia:
-  paperlessexport:
-  paperlessconsume:
   paperlessredis:
 
 networks:
