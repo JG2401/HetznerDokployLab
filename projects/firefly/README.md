@@ -27,3 +27,12 @@
 - Container Port: `8080`
 - HTTPS: `true`
 - Certificate Provider: `Let's Encrypt`
+
+### Volume Backups
+
+- Task Name: `db`
+- Schedule `0 0 * * *`
+- Service Name: `db`
+- Volume: `firefly-firefly-xxx`
+- Keep Latest Backups: `7`
+- Enabled: true
