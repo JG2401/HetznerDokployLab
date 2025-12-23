@@ -27,3 +27,23 @@
 - Container Port: `8000`
 - HTTPS: `true`
 - Certificate Provider: `Let's Encrypt`
+
+### Volume Backups
+
+#### redis 
+
+- Task Name: `redis`
+- Schedule `0 0 * * *`
+- Service Name: `redis`
+- Volume: `paperless-paperless-xxx`
+- Keep Latest Backups: `7`
+- Enabled: true
+
+#### db
+
+- Task Name: `db`
+- Schedule `0 0 * * *`
+- Service Name: `db`
+- Volume: `paperless-paperless-xxx`
+- Keep Latest Backups: `7`
+- Enabled: true
