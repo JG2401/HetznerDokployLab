@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   firefly:
     image: fireflyiii/core:latest
@@ -22,7 +23,7 @@ services:
       TRUSTED_PROXIES: ${TRUSTED_PROXIES}
     networks:
       - dokploy-network
-      
+
   cron:
     image: alpine:3.23.2
     restart: unless-stopped
@@ -47,10 +48,13 @@ services:
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
+    volumes:
+      - firefly_iii_db:/var/lib/mysql
     networks:
       - dokploy-network
-    volumes:
-      - /mnt/storagebox-crypt/firefly/mysql:/var/lib/mysql
+
+volumes:
+  firefly_iii_db:
 
 networks:
   dokploy-network:
