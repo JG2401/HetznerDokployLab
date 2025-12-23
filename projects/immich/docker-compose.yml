@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   immich-server:
-    image: ghcr.io/immich-app/immich-server:v2.1.0
+    image: ghcr.io/immich-app/immich-server:v2.4.1
 
     volumes:
       - /mnt/storagebox-crypt/immich/library:/usr/src/app/upload
