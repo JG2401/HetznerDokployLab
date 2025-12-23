@@ -134,6 +134,6 @@ WantedBy=multi-user.target
 ```
 
 With this the local mount directory will be connected with the storagebox.
+Every Folder for the Applications will be created automatically based on your docker-compose configuration.
 
 - Then Run `systemctl start rclone-storagebox-crypt.service`
-- Now you should create a folder for every service `mkdir /mnt/storagebox-crypt/nextcloud`
