@@ -1,0 +1,14 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:1.34.3
+    restart: always
+    environment:
+      DOMAIN: ${DOMAIN}
+      SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED}
+    volumes:
+      - /mnt/storagebox-crypt/vaultwarden:/data
+    expose:
+      - 80
+
+volumes:
+  vaultwarden:
