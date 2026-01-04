@@ -1,0 +1,29 @@
+services:
+  nextcloud:
+    image: nextcloud:30.0.2
+    restart: unless-stopped
+    volumes:
+      - nextcloud_data:/var/www/html
+      - /mnt/storagebox-crypt/nextcloud:/mnt/storagebox
+    environment:
+      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_DOMAIN}
+      - MYSQL_HOST=nextcloud_db
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=${MYSQL_SECRET_PASSWORD}
+      - OVERWRITEPROTOCOL=https
+
+  nextcloud_db:
+    image: mariadb
+    restart: unless-stopped
+    volumes:
+      - nextcloud_db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_SECRET_PASSWORD_ROOT}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=${MYSQL_SECRET_PASSWORD}
+
+volumes:
+  nextcloud_data:
+  nextcloud_db_data:

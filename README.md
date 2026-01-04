@@ -137,3 +137,11 @@ With this the local mount directory will be connected with the storagebox.
 Every Folder for the Applications will be created automatically based on your docker-compose configuration.
 
 - Then Run `systemctl start rclone-storagebox-crypt.service`
+
+
+# IMPORTANT DIRECTORIES
+
+## Volumes on local machine
+ls /var/lib/docker/volumes
+
+rclone ls storagebox-crypt:
