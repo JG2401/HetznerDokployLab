@@ -5,8 +5,9 @@ services:
     environment:
       DOMAIN: ${DOMAIN}
       SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED}
+      ADMIN_TOKEN: ${ADMIN_TOKEN}
     volumes:
-      - /mnt/storagebox-crypt/vaultwarden:/data
+      - vaultwarden:/data
     expose:
       - 80
 

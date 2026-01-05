@@ -145,3 +145,63 @@ Every Folder for the Applications will be created automatically based on your do
 ls /var/lib/docker/volumes
 
 rclone ls storagebox-crypt:
+
+
+
+# Wireguard
+
+- sudo apt install wireguard
+- sudo nano /etc/wireguard/wg0.conf
+
+Copy the config into the file and modify it
+
+```
+
+[Interface]
+PrivateKey = 
+Address = 10.8.0.2/24
+
+[Peer]
+PublicKey = 
+PresharedKey = 
+AllowedIPs = 192.168.1.0/24
+PersistentKeepalive = 25
+Endpoint = 
+```
+
+
+- sudo wg-quick up wg0
+- sudo wg
+- ping 192.168.1.10
+
+
+# Backup-Job (with [Wireguard](#wireguard) & Rclone)
+
+- Run `nano ~/.config/rclone/rclone.conf` again and append the following modified configuration.
+
+```
+[nas]
+type = smb
+host = 192.168.x.x
+user = your_nas_username
+pass = your_nas_password
+```
+
+after that run `rclone sync storagebox-crypt: nas:/YourShareName --progress --checksum` to sync the data manually.
+
+To run the sync automatically create a sh-file with `nano /usr/local/bin/backup_storagebox.sh`
+
+```
+# Start WireGuard VPN
+sudo wg-quick up wg0
+
+sleep 5
+
+rclone sync storagebox-crypt: nas:/YourShareName --progress --checksum
+
+sudo wg-quick down wg0
+```
+
+Then make the script executable with `sudo chmod +x /usr/local/bin/backup_storagebox.sh`
+Edit cronjob file with `crontab -e`
+and add `0 2 * * * /usr/local/bin/backup_storagebox.sh >> /var/log/backup_storagebox.log 2>&1` for example. This runs every day at 2:00 AM then.
