@@ -3,7 +3,7 @@ services:
     image: lscr.io/linuxserver/radarr:6.0.4
     container_name: radarr
     environment:
-      - TZ=Europe/Berlin
+      - TZ=${TIMEZONE}
     volumes:
       - config:/config
       - /mnt/seedbox/media/Movies:/home/etron/media/Movies
