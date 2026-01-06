@@ -8,7 +8,7 @@
 
 ### Environment
 
-- TIMEZONE: #your time zone - for example `Europe/Berlin`
+- JELLYFIN_HOST: #your jellyfin domain - for example `jellyfin.example.com`
 
 ### Domains
 
