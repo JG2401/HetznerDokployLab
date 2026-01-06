@@ -60,3 +60,8 @@ updates:
     directory: "/projects/vaultwarden"
     schedule:
       interval: "monthly"
+  #nextcloud
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/nextcloud"
+    schedule:
+      interval: "monthly"
