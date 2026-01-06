@@ -40,3 +40,8 @@ updates:
     directory: "/projects/sonarr"
     schedule:
       interval: "monthly"
+  #radarr
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/radarr"
+    schedule:
+      interval: "monthly"
