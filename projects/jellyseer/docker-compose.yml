@@ -1,6 +1,6 @@
 services:
   jellyseerr:
-    image: ghcr.io/fallenbagel/jellyseerr:latest
+    image: ghcr.io/fallenbagel/jellyseerr:2.7.3
     init: true
     container_name: jellyseerr
     environment:
