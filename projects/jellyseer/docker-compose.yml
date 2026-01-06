@@ -4,9 +4,9 @@ services:
     init: true
     container_name: jellyseerr
     environment:
-      - TZ=Europe/Berlin
+      - TZ=${TIMEZONE}
     volumes:
-      - /path/to/appdata/config:/app/config
+      - config:/app/config
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1
       start_period: 20s
@@ -14,3 +14,6 @@ services:
       interval: 15s
       retries: 3
     restart: unless-stopped
+
+volumes:
+  config:
