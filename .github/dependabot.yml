@@ -45,3 +45,8 @@ updates:
     directory: "/projects/radarr"
     schedule:
       interval: "monthly"
+  #jellyseer
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/jellyseer"
+    schedule:
+      interval: "monthly"
