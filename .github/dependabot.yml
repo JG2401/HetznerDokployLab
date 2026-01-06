@@ -50,3 +50,8 @@ updates:
     directory: "/projects/jellyseer"
     schedule:
       interval: "monthly"
+  #jellyfin
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/jellyfin"
+    schedule:
+      interval: "monthly"
