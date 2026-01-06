@@ -35,3 +35,8 @@ updates:
     directory: "/projects/tandoor"
     schedule:
       interval: "monthly"
+  #sonarr
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/sonarr"
+    schedule:
+      interval: "monthly"
