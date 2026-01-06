@@ -23,5 +23,5 @@
 - Schedule `0 0 * * *`
 - Service Name: `sonarr`
 - Volume: `sonarr-sonarr-xxx`
-- Keep Latest Backups: `7`
+- Keep Latest Backups: `1`
 - Enabled: true
