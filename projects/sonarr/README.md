@@ -19,7 +19,7 @@
 
 ### Volume Backups
 
-- Task Name: `sonar`
+- Task Name: `sonarr`
 - Schedule `0 0 * * *`
 - Service Name: `sonarr`
 - Volume: `sonarr-sonarr-xxx`
