@@ -1,3 +1,5 @@
+![diagram](images/diagram.jpg)
+
 # Prerequisites
 
 - Hetzner Account
