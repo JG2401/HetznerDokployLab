@@ -11,7 +11,7 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
       - N8N_SECURE_COOKIE=false
     volumes:
-      - /mnt/storagebox-crypt:/mnt/storagebox-crypt:rw
+      - /media/storagebox-crypt:/media/storagebox-crypt:rw
       - n8n_data:/home/node/.n8n
 
 volumes:

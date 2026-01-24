@@ -5,7 +5,7 @@ services:
     image: ghcr.io/immich-app/immich-server:v2.4.1
 
     volumes:
-      - /mnt/storagebox-crypt/immich/library:/usr/src/app/upload
+      - /media/storagebox-crypt/immich/library:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       immich-redis:

@@ -12,7 +12,7 @@ services:
       SECRET_KEY: ${SECRET_KEY}
     volumes:
       - staticfiles:/opt/recipes/staticfiles
-      - /mnt/storagebox-crypt/tandoor/mediafiles:/opt/recipes/mediafiles
+      - /media/storagebox-crypt/tandoor/mediafiles:/opt/recipes/mediafiles
     networks:
       - dokploy-network
 
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
     image: postgres:16-alpine
     volumes:
-      - /mnt/storagebox-crypt/tandoor/postgresql:/var/lib/postgresql/data
+      - /media/storagebox-crypt/tandoor/postgresql:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

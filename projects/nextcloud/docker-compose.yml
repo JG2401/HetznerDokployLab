@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     volumes:
       - nextcloud_data:/var/www/html
-      - /mnt/storagebox-crypt/nextcloud:/mnt/storagebox
+      - /media/storagebox-crypt/nextcloud:/mnt/storagebox
     environment:
       - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_DOMAIN}
       - MYSQL_HOST=nextcloud_db

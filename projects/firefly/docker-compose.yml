@@ -7,7 +7,7 @@ services:
     container_name: firefly_iii_core
     restart: unless-stopped
     volumes:
-      - /mnt/storagebox-crypt/firefly/upload:/var/www/html/storage/upload
+      - /media/storagebox-crypt/firefly/upload:/var/www/html/storage/upload
     environment:
       SITE_OWNER: ${SITE_OWNER}
       DB_CONNECTION: ${DB_CONNECTION}
