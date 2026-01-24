@@ -136,6 +136,11 @@ WantedBy=multi-user.target
 With this the local mount directory will be connected with the storagebox.
 Every Folder for the Applications will be created automatically based on your docker-compose configuration.
 
+This would cause an error somehow because the connection will be lost after time. to fix that there is a symbolic-link needed.
+Run `ln -s /mnt/storagebox-crypt /media/storagebox-crypt` to create a link that uses the media directory.
+Your services should use `/media/storagebox-crypt` instead of `/mnt/storagebox-crypt` in the volume settings.
+
+
 - Then Run `systemctl start rclone-storagebox-crypt.service`
 
 
