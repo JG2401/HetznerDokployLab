@@ -13,7 +13,6 @@ services:
     volumes:
       - /media/storagebox-crypt:/media/storagebox-crypt:rw
       - n8n_data:/home/node/.n8n
-    user: root
 
 volumes:
   n8n_data:
