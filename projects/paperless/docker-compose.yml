@@ -4,6 +4,8 @@ services:
     image: ghcr.io/paperless-ngx/paperless-ngx:2.20.3
     container_name: paperless
     restart: unless-stopped
+    labels:
+      - rclone.storage=storagebox-crypt
     volumes:
       - /media/storagebox-crypt/paperless/data:/usr/src/paperless/data
       - /media/storagebox-crypt/paperless/media:/usr/src/paperless/media

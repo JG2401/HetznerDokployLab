@@ -3,7 +3,8 @@ version: "3.9"
 services:
   immich-server:
     image: ghcr.io/immich-app/immich-server:v2.4.1
-
+    labels:
+      - rclone.storage=storagebox-crypt
     volumes:
       - /media/storagebox-crypt/immich/library:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro

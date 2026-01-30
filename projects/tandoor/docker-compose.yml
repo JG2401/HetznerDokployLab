@@ -3,6 +3,8 @@ services:
   tandoor:
     restart: unless-stopped
     image: vabene1111/recipes:2.3.6
+    labels:
+      - rclone.storage=storagebox-crypt
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
       POSTGRES_PORT: ${POSTGRES_PORT}

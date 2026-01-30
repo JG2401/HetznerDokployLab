@@ -6,6 +6,8 @@ services:
     hostname: app
     container_name: firefly_iii_core
     restart: unless-stopped
+    labels:
+      - rclone.storage=storagebox-crypt
     volumes:
       - /media/storagebox-crypt/firefly/upload:/var/www/html/storage/upload
     environment:
