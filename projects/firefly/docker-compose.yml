@@ -27,7 +27,7 @@ services:
       - dokploy-network
 
   cron:
-    image: alpine:3.23.2
+    image: alpine:3.23.3
     restart: unless-stopped
     container_name: firefly_iii_cron
     environment:
