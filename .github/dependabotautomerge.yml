@@ -24,4 +24,4 @@ jobs:
         if: contains(steps.check.outputs.labels, 'auto-merge')
         uses: fastify/github-action-merge-dependabot@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
