@@ -1,6 +1,6 @@
 services:
   nextcloud:
-    image: nextcloud:31.0.0
+    image: nextcloud:32.0.5
     restart: unless-stopped
     labels:
       - rclone.storage=storagebox-crypt
