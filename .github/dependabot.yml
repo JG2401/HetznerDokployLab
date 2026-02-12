@@ -10,6 +10,9 @@ updates:
     directory: "/projects/firefly"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
@@ -20,11 +23,17 @@ updates:
     directory: "/projects/it-tools"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #n8n
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
@@ -40,28 +49,46 @@ updates:
     directory: "/projects/sonarr"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #radarr
   - package-ecosystem: "docker-compose"
     directory: "/projects/radarr"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #jellyseer
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #vaultwarden
   - package-ecosystem: "docker-compose"
     directory: "/projects/vaultwarden"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
   #nextcloud
   - package-ecosystem: "docker-compose"
     directory: "/projects/nextcloud"
     schedule:
       interval: "monthly"
+    labels: 
+      - "dependencies"
+      - "auto-merge"
