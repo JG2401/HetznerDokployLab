@@ -9,7 +9,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/firefly"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -22,7 +22,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/it-tools"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -30,7 +30,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -48,7 +48,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/sonarr"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -56,7 +56,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/radarr"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -64,7 +64,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -72,7 +72,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -80,7 +80,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/vaultwarden"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
@@ -88,7 +88,7 @@ updates:
   - package-ecosystem: "docker-compose"
     directory: "/projects/nextcloud"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
     labels: 
       - "dependencies"
       - "auto-merge"
