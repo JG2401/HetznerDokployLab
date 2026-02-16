@@ -14,14 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check for auto-merge label
-        id: check
-        run: |
-          labels=$(jq -r '.pull_request.labels[].name' "$GITHUB_EVENT_PATH" | tr '\n' ' ')
-          echo "labels=$labels" >> "$GITHUB_OUTPUT"
-
       - name: Auto-merge
-        if: contains(steps.check.outputs.labels, 'auto-merge')
+        if: contains(github.event.pull_request.labels.*.name, 'auto-merge')
         uses: fastify/github-action-merge-dependabot@v3
         with:
           github-token: ${{ secrets.GH_TOKEN }}
