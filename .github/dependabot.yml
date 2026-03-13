@@ -47,8 +47,6 @@ updates:
   #sonarr
   - package-ecosystem: "docker-compose"
     directory: "/projects/sonarr"
-    registries:
-      - lscr
     schedule:
       interval: "weekly"
     labels: 
@@ -57,8 +55,6 @@ updates:
   #radarr
   - package-ecosystem: "docker-compose"
     directory: "/projects/radarr"
-    registries:
-      - lscr
     schedule:
       interval: "weekly"
     labels: 
