@@ -2,7 +2,7 @@ version: '3.8'
 services:
   tandoor:
     restart: unless-stopped
-    image: vabene1111/recipes:2.3.6
+    image: vabene1111/recipes:2.5.3
     labels:
       - rclone.storage=storagebox-crypt
     environment:
