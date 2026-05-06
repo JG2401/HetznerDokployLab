@@ -127,7 +127,8 @@ ExecStart=/usr/bin/rclone mount storagebox-crypt: /mnt/storagebox-crypt \
   --vfs-read-chunk-size-limit 256M \
   --poll-interval 1m \
   --timeout 1m \
-  --log-level INFO
+  --log-level INFO \
+  --allow-non-empty
 Restart=on-failure
 RestartSec=10
 
@@ -144,6 +145,7 @@ Your services should use `/media/storagebox-crypt` instead of `/mnt/storagebox-c
 
 
 - Then Run `systemctl start rclone-storagebox-crypt.service`
+- And don't forget to enable it to start it automaticaly `systemctl enable rclone-storagebox-crypt.service`
 
 
 # IMPORTANT DIRECTORIES
