@@ -4,6 +4,8 @@ services:
     restart: unless-stopped
     labels:
       - rclone.storage=storagebox-crypt
+      - traefik.http.middlewares.nextcloud-buffering.buffering.maxRequestBodyBytes=0
+      - traefik.http.routers.nextcloud.middlewares=nextcloud-buffering
     volumes:
       - nextcloud_data:/var/www/html
       - /media/storagebox-crypt/nextcloud:/mnt/storagebox
@@ -14,6 +16,8 @@ services:
       - MYSQL_USER=nextcloud
       - MYSQL_PASSWORD=${MYSQL_SECRET_PASSWORD}
       - OVERWRITEPROTOCOL=https
+      - PHP_UPLOAD_LIMIT=10G
+      - PHP_MEMORY_LIMIT=1024M
 
   nextcloud_db:
     image: mariadb
