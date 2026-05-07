@@ -214,3 +214,37 @@ sudo wg-quick down wg0
 Then make the script executable with `sudo chmod +x /usr/local/bin/backup_storagebox.sh`
 Edit cronjob file with `crontab -e`
 and add `0 2 * * * /usr/local/bin/backup_storagebox.sh >> /var/log/backup_storagebox.log 2>&1` for example. This runs every day at 2:00 AM then.
+
+
+# Large Files
+
+To be able to upload large files (>100MB) without interruptions you need to modify the `traefik.yml` in the Traefik File System (Home).
+For that you need to add the following to `entryPoints`.
+
+```yml
+transport:
+      respondingTimeouts:
+        readTimeout: 0
+        writeTimeout: 0
+        idleTimeout: 180s
+```
+
+result:
+
+```yml
+entryPoints:
+  web:
+    address: :80
+  websecure:
+    address: :443
+    http3:
+      advertisedPort: 443
+    transport:
+      respondingTimeouts:
+        readTimeout: 0
+        writeTimeout: 0
+        idleTimeout: 180s
+    http:
+      tls:
+        certResolver: letsencrypt
+```
