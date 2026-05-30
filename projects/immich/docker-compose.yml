@@ -63,7 +63,7 @@ services:
     restart: always
 
   immich-database:
-    image: tensorchord/pgvecto-rs:pg14-v0.4.0
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0
 
     volumes:
       - immich-postgres:/var/lib/postgresql/data
