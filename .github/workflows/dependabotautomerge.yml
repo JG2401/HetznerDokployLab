@@ -15,16 +15,16 @@ jobs:
 
     steps:
       - name: Debug token presence
-      run: |
-        if [ -z "${{ secrets.GITHUB_TOKEN }}" ]; then
-          echo "TOKEN IS EMPTY"
-          exit 1
-        else
-          echo "TOKEN EXISTS"
-        fi
-    
-        - name: Auto-merge
-          if: contains(github.event.pull_request.labels.*.name, 'auto-merge')
-          uses: fastify/github-action-merge-dependabot@v3
-          with:
-            github-token: ${{ secrets.GH_TOKEN }}
+        run: |
+          if [ -z "${{ secrets.GITHUB_TOKEN }}" ]; then
+            echo "TOKEN IS EMPTY"
+            exit 1
+          else
+            echo "TOKEN EXISTS"
+          fi
+      
+          - name: Auto-merge
+            if: contains(github.event.pull_request.labels.*.name, 'auto-merge')
+            uses: fastify/github-action-merge-dependabot@v3
+            with:
+              github-token: ${{ secrets.GH_TOKEN }}
