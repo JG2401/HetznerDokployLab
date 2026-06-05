@@ -21,6 +21,7 @@ services:
       PAPERLESS_ALLOWED_HOSTS: ${PAPERLESS_ALLOWED_HOSTS}
       PAPERLESS_DBHOST: ${PAPERLESS_DBHOST}
       PAPERLESS_DBPASS: ${PAPERLESS_DBPASS}
+      PAPERLESS_OCR_OUTPUT_TYPE: ${PAPERLESS_OCR_OUTPUT_TYPE}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000"]
       interval: 30s
