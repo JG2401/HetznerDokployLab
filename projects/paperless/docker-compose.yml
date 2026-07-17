@@ -2,6 +2,11 @@ version: '3.8'
 services:
   paperless:
     image: ghcr.io/paperless-ngx/paperless-ngx:2.20.10
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1.5G
     container_name: paperless
     restart: unless-stopped
     labels:
@@ -21,6 +26,7 @@ services:
       PAPERLESS_ALLOWED_HOSTS: ${PAPERLESS_ALLOWED_HOSTS}
       PAPERLESS_DBHOST: ${PAPERLESS_DBHOST}
       PAPERLESS_DBPASS: ${PAPERLESS_DBPASS}
+      PAPERLESS_OCR_OUTPUT_TYPE: ${PAPERLESS_OCR_OUTPUT_TYPE}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000"]
       interval: 30s
@@ -31,6 +37,11 @@ services:
 
   redis:
     image: redis:8.8.0
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
     container_name: paperless-redis
     restart: unless-stopped
     volumes:
@@ -41,6 +52,11 @@ services:
   db:
     container_name: paperless-db
     image: postgres:16
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 1G
     restart: unless-stopped
     volumes:
       - paperlessdb:/var/lib/postgresql/data
