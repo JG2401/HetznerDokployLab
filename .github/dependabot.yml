@@ -46,7 +46,7 @@ updates:
     schedule:
       interval: "weekly"
     labels: 
-      - "Jellyseer"
+      - "jellyseer"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
