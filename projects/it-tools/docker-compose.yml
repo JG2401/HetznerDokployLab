@@ -1,5 +1,0 @@
-services:
-  it-tools:
-    container_name: it-tools
-    image: corentinth/it-tools:2024.5.13-a0bc346
-    restart: unless-stopped

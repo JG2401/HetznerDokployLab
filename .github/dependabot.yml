@@ -11,84 +11,60 @@ updates:
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "firefly"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
     schedule:
-      interval: "monthly"
-  #it-tools
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/it-tools"
-    schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "immich"
   #n8n
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "n8n"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    labels: 
+      - "paperless"
   #tandoor
   - package-ecosystem: "docker-compose"
     directory: "/projects/tandoor"
     schedule:
-      interval: "monthly"
-  #sonarr
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/sonarr"
-    schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
-  #radarr
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/radarr"
-    schedule:
-      interval: "weekly"
-    labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "tandoor"
   #jellyseer
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "jellyseer"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "jellyfin"
   #vaultwarden
   - package-ecosystem: "docker-compose"
     directory: "/projects/vaultwarden"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "vaultwarden"
   #nextcloud
   - package-ecosystem: "docker-compose"
     directory: "/projects/nextcloud"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "nextcloud"
