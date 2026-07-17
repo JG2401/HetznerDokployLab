@@ -10,43 +10,61 @@ updates:
     directory: "/projects/firefly"
     schedule:
       interval: "weekly"
+    labels: 
+      - "firefly"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
     schedule:
       interval: "weekly"
+    labels: 
+      - "immich"
   #n8n
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
       interval: "weekly"
+    labels: 
+      - "n8n"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
     schedule:
       interval: "weekly"
+    labels: 
+      - "paperless"
   #tandoor
   - package-ecosystem: "docker-compose"
     directory: "/projects/tandoor"
     schedule:
       interval: "weekly"
+    labels: 
+      - "tandoor"
   #jellyseer
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
     schedule:
       interval: "weekly"
+    labels: 
+      - "Jellyseer"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
     schedule:
       interval: "weekly"
+    labels: 
+      - "jellyfin"
   #vaultwarden
   - package-ecosystem: "docker-compose"
     directory: "/projects/vaultwarden"
     schedule:
       interval: "weekly"
+    labels: 
+      - "vaultwarden"
   #nextcloud
   - package-ecosystem: "docker-compose"
     directory: "/projects/nextcloud"
     schedule:
       interval: "weekly"
+    labels: 
+      - "nextcloud"
