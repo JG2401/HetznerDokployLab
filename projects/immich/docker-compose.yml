@@ -40,7 +40,7 @@ services:
       retries: 3
 
   immich-machine-learning:
-    image: ghcr.io/immich-app/immich-machine-learning:v2.7.5
+    image: ghcr.io/immich-app/immich-machine-learning:v3.0.3
     deploy:
       resources:
         limits:
