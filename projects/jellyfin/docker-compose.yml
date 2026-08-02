@@ -10,7 +10,7 @@ services:
     volumes:
       - config:/config
       - cache:/cache
-      - /opt/media/seedbox/media:/media/seedbox:ro
+      - /mnt/seedbox/media:/media
     restart: "unless-stopped"
     environment:
       - JELLYFIN_PublishedServerUrl=https://${JELLYFIN_HOST}
