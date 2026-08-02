@@ -1,0 +1,95 @@
+version: "3.9"
+
+services:
+  rclone-seedbox:
+    image: rclone/rclone:v1.75.0
+    container_name: rclone-seedbox
+    restart: unless-stopped
+
+    cap_add:
+      - SYS_ADMIN
+
+    devices:
+      - /dev/fuse:/dev/fuse
+
+    security_opt:
+      - apparmor:unconfined
+
+    ports:
+      - "5572:5572"
+
+    command: >
+      mount seedbox: /data
+      --config /config/rclone.conf
+      --allow-other
+      --buffer-size 256M
+      --dir-cache-time 1h
+      --vfs-cache-mode full
+      --vfs-cache-max-size 512M
+      --vfs-read-chunk-size 64M
+      --vfs-read-chunk-size-limit 256M
+      --poll-interval 1m
+      --timeout 15m
+      --contimeout 15m
+      --retries 10
+      --low-level-retries 20
+      --log-level INFO
+      --allow-non-empty
+      --rc
+      --rc-addr :5572
+      --rc-web-gui
+      --rc-web-gui-no-open-browser
+      --rc-allow-origin *
+      --rc-user ${RCLONE_USER}
+      --rc-pass ${RCLONE_PASS}
+
+    volumes:
+      - /opt/rclone/config:/config
+      - /opt/media/seedbox:/data:rshared
+      - ./logs/seedbox:/logs
+
+
+  rclone-storagebox-crypt:
+    image: rclone/rclone:v1.75.0
+    container_name: rclone-storagebox-crypt
+    restart: unless-stopped
+
+    cap_add:
+      - SYS_ADMIN
+
+    devices:
+      - /dev/fuse:/dev/fuse
+
+    security_opt:
+      - apparmor:unconfined
+
+    ports:
+      - "5573:5573"
+
+    command: >
+      mount storagebox-crypt: /data
+      --config /config/rclone.conf
+      --allow-other
+      --buffer-size 256M
+      --dir-cache-time 12h
+      --vfs-cache-mode full
+      --vfs-cache-max-size 512M
+      --vfs-read-chunk-size 64M
+      --vfs-read-chunk-size-limit 256M
+      --poll-interval 1m
+      --timeout 1m
+      --log-level INFO
+      --allow-non-empty
+      --rc
+      --rc-addr :5573
+      --rc-web-gui
+      --rc-web-gui-no-open-browser
+      --rc-allow-origin *
+      --rc-user ${RCLONE_USER}
+      --rc-pass ${RCLONE_PASS}
+
+    volumes:
+      - /opt/rclone/config:/config
+      - /opt/rclone/ssh:/root/.ssh:ro
+      - /opt/media/storagebox:/data:rshared
+      - ./logs/storagebox:/logs
