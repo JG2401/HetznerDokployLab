@@ -60,7 +60,7 @@ services:
       retries: 3
 
   immich-redis:
-    image: redis:6.2-alpine
+    image: redis:8.0-alpine
     deploy:
       resources:
         limits:
