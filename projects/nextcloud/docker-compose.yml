@@ -8,7 +8,7 @@ services:
       - traefik.http.routers.nextcloud.middlewares=nextcloud-buffering
     volumes:
       - nextcloud_data:/var/www/html
-      - /media/storagebox-crypt/nextcloud:/mnt/storagebox
+      - /opt/media/storagebox/nextcloud:/mnt/storagebox
     environment:
       - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_DOMAIN}
       - MYSQL_HOST=nextcloud_db
