@@ -14,7 +14,7 @@ services:
       - N8N_SECURE_COOKIE=false
       - N8N_RESTRICT_FILE_ACCESS_TO=/home/node
     volumes:
-      - /media/storagebox-crypt/paperless/consume:/home/node/paperless/consume:rw
+      - /opt/media/storagebox/paperless/consume:/home/node/paperless/consume:rw
       - n8n_data:/home/node/.n8n
 
 volumes:
