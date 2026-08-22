@@ -12,10 +12,10 @@ services:
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /media/storagebox-crypt/paperless/data:/usr/src/paperless/data
-      - /media/storagebox-crypt/paperless/media:/usr/src/paperless/media
-      - /media/storagebox-crypt/paperless/export:/usr/src/paperless/export
-      - /media/storagebox-crypt/paperless/consume:/usr/src/paperless/consume
+      - /opt/media/storagebox/paperless/data:/usr/src/paperless/data
+      - /opt/media/storagebox/paperless/media:/usr/src/paperless/media
+      - /opt/media/storagebox/paperless/export:/usr/src/paperless/export
+      - /opt/media/storagebox/paperless/consume:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: ${PAPERLESS_REDIS}
       PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE}
