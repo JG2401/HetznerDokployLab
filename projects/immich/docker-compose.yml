@@ -11,7 +11,7 @@ services:
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /media/storagebox-crypt/immich/library:/usr/src/app/upload
+      - /opt/media/storagebox/immich/library:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       immich-redis:
