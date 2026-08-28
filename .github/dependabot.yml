@@ -68,3 +68,38 @@ updates:
       interval: "weekly"
     labels: 
       - "nextcloud"
+  #mealie
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/mealie"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "mealie"
+  #rclone
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/rclone"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "rclone"
+  #bentopdf
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/bentopdf"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "bentopdf"
+  #gitea
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/gitea"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "gitea"
+  #gitea-mirror
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/gitea-mirror"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "gitea-mirror"
