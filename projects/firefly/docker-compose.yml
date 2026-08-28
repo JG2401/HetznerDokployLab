@@ -27,7 +27,7 @@ services:
       - dokploy-network
 
   cron:
-    image: alpine:3.23.4
+    image: alpine:3.24.1
     restart: unless-stopped
     container_name: firefly_iii_cron
     environment:
@@ -41,7 +41,7 @@ services:
       - dokploy-network
 
   db:
-    image: mariadb:12.2
+    image: mariadb:12.3
     hostname: db
     container_name: firefly_iii_db
     restart: unless-stopped

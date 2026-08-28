@@ -3,10 +3,15 @@ version: "3.9"
 services:
   immich-server:
     image: ghcr.io/immich-app/immich-server:v2.7.5
+    deploy:
+      resources:
+        limits:
+          cpus: "1.25"
+          memory: 2G
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /media/storagebox-crypt/immich/library:/usr/src/app/upload
+      - /opt/media/storagebox/immich/library:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       immich-redis:
@@ -36,7 +41,11 @@ services:
 
   immich-machine-learning:
     image: ghcr.io/immich-app/immich-machine-learning:v2.7.5
-
+    deploy:
+      resources:
+        limits:
+          cpus: "1.75"
+          memory: 2.5G
     volumes:
       - immich-model-cache:/cache
     environment:
@@ -52,7 +61,11 @@ services:
 
   immich-redis:
     image: redis:6.2-alpine
-
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
     volumes:
       - immich-redis-data:/data
     healthcheck:

@@ -11,60 +11,60 @@ updates:
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "firefly"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    labels: 
+      - "immich"
   #n8n
   - package-ecosystem: "docker-compose"
     directory: "/projects/n8n"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "n8n"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    labels: 
+      - "paperless"
   #tandoor
   - package-ecosystem: "docker-compose"
     directory: "/projects/tandoor"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    labels: 
+      - "tandoor"
   #jellyseer
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "jellyseer"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "jellyfin"
   #vaultwarden
   - package-ecosystem: "docker-compose"
     directory: "/projects/vaultwarden"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "vaultwarden"
   #nextcloud
   - package-ecosystem: "docker-compose"
     directory: "/projects/nextcloud"
     schedule:
       interval: "weekly"
     labels: 
-      - "dependencies"
-      - "auto-merge"
+      - "nextcloud"

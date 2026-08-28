@@ -1,6 +1,6 @@
 services:
   nextcloud:
-    image: nextcloud:33.0.2
+    image: nextcloud:34.0.3
     restart: unless-stopped
     labels:
       - rclone.storage=storagebox-crypt
@@ -8,7 +8,7 @@ services:
       - traefik.http.routers.nextcloud.middlewares=nextcloud-buffering
     volumes:
       - nextcloud_data:/var/www/html
-      - /media/storagebox-crypt/nextcloud:/mnt/storagebox
+      - /opt/media/storagebox/nextcloud:/mnt/storagebox
     environment:
       - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_DOMAIN}
       - MYSQL_HOST=nextcloud_db
