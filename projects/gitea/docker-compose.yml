@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  gitea:
+    image: docker.gitea.com/gitea:1.24.4
+    restart: unless-stopped
+    environment:
+      USER_UID: ${USER_UID}
+      USER_GID: ${USER_GID}
+      DISABLE_REGISTRATION: ${DISABLE_REGISTRATION}
+    volumes:
+      - gitea-data:/data
+    expose:
+      - "3000" # Web UI
+      - "22" # SSH (internal only)
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gitea-data: {}
