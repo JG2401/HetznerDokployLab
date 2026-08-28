@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   paperless:
-    image: ghcr.io/paperless-ngx/paperless-ngx:3.0.5
+    image: ghcr.io/paperless-ngx/paperless-ngx:3.1.0
     deploy:
       resources:
         limits:
