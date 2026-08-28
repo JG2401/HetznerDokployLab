@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   immich-server:
-    image: ghcr.io/immich-app/immich-server:v3.1.0
+    image: ghcr.io/immich-app/immich-server:v2.7.5
     deploy:
       resources:
         limits:
