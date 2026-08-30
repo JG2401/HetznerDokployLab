@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   bentopdf:
-    image: ghcr.io/alam00000/bentopdf-simple:2.8.7
+    image: ghcr.io/alam00000/bentopdf-simple:2.8.8
     restart: unless-stopped
     expose:
       - 8080
