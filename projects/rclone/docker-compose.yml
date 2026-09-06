@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   rclone-seedbox:
-    image: rclone/rclone:v1.75.0
+    image: rclone/rclone:1.75.1
     container_name: rclone-seedbox
     restart: unless-stopped
 
@@ -50,7 +50,7 @@ services:
 
 
   rclone-storagebox-crypt:
-    image: rclone/rclone:v1.75.0
+    image: rclone/rclone:1.75.1
     container_name: rclone-storagebox-crypt
     restart: unless-stopped
 
