@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:2.19.4
+    restart: unless-stopped
+    ports:
+      - 80
+    environment:
+      - TZ=Europe/Berlin
+    volumes:
+      - config:/config
+      - metadata:/metadata
+      - /opt/media/seedbox/media:/audiobooks:ro
+
+volumes:
+  config: {}
+  metadata: {} 

@@ -103,3 +103,10 @@ updates:
       interval: "weekly"
     labels: 
       - "gitea-mirror"
+  #audiobookshelf
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/audiobookshelf"
+    schedule:
+      interval: "weekly"
+    labels: 
+      - "audiobookshelf"
