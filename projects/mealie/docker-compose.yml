@@ -7,7 +7,7 @@ services:
           cpus: "1.0"
           memory: 1G
     volumes:
-      - mealie-data:/app/data/
+      - /opt/media/storagebox/mealie:/app/data/
     environment:
       PUID: 1000
       PGID: 1000
@@ -31,6 +31,3 @@ services:
       SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL}
       SMTP_USER: ${SMTP_USER}
       SMTP_PASSWORD: ${SMTP_PASSWORD}
-
-volumes:
-  mealie-data: {}
