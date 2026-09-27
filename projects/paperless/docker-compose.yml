@@ -37,7 +37,7 @@ services:
       - dokploy-network
 
   redis:
-    image: redis:8.10.1
+    image: redis:8.10.2
     deploy:
       resources:
         limits:
