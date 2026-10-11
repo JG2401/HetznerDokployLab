@@ -30,15 +30,6 @@
 
 ### Volume Backups
 
-#### redis 
-
-- Task Name: `redis`
-- Schedule `0 0 * * *`
-- Service Name: `redis`
-- Volume: `paperless-paperless-xxx`
-- Keep Latest Backups: `7`
-- Enabled: true
-
 #### db
 
 - Task Name: `db`

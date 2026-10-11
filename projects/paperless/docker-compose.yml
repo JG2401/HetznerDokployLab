@@ -45,8 +45,6 @@ services:
           memory: 256M
     container_name: paperless-redis
     restart: unless-stopped
-    volumes:
-      - paperlessredis:/user/local/etc/redis
     networks:
       - dokploy-network
 
@@ -70,7 +68,6 @@ services:
 
 volumes:
   paperlessdb:
-  paperlessredis:
 
 networks:
   dokploy-network:
