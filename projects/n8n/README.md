@@ -4,7 +4,7 @@
 
 ### General
 
-- Compose Path: `./projects/n8n/n8n.yml`
+- Compose Path: `./projects/n8n/docker-compose.yml`
 
 ### Environment
 
