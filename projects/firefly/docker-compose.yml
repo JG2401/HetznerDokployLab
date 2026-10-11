@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   firefly:
-    image: fireflyiii/core:latest
+    image: fireflyiii/core:version-6.6.2
     hostname: app
     container_name: firefly_iii_core
     restart: unless-stopped
