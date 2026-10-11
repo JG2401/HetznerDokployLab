@@ -33,13 +33,6 @@ updates:
       interval: "weekly"
     labels: 
       - "paperless"
-  #tandoor
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/tandoor"
-    schedule:
-      interval: "weekly"
-    labels: 
-      - "tandoor"
   #jellyseer
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyseer"
