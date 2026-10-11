@@ -13,6 +13,16 @@ services:
       - rclone.storage=storagebox-crypt
     volumes:
       - /opt/media/storagebox/firefly/upload:/var/www/html/storage/upload
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "timeout 10 ls /var/www/html/storage/upload >/dev/null 2>&1 || exit 1"
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s
     environment:
       SITE_OWNER: ${SITE_OWNER}
       DB_CONNECTION: ${DB_CONNECTION}

@@ -46,6 +46,16 @@ services:
       - /opt/media/seedbox:/data:rshared
       - ./logs/seedbox:/logs
 
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "timeout 10 ls /data >/dev/null 2>&1 || exit 1"
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s
 
   rclone-storagebox-crypt:
     image: rclone/rclone:1.75.1
@@ -91,3 +101,14 @@ services:
       - /opt/rclone/ssh:/root/.ssh:ro
       - /opt/media/storagebox:/data:rshared
       - ./logs/storagebox:/logs
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "timeout 10 ls /data >/dev/null 2>&1 || exit 1"
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s

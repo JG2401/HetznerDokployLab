@@ -8,6 +8,16 @@ services:
           memory: 1G
     volumes:
       - /opt/media/storagebox/mealie:/app/data/
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "timeout 10 ls /app/data >/dev/null 2>&1 || exit 1"
+        ]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s
     environment:
       PUID: 1000
       PGID: 1000

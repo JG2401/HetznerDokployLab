@@ -30,10 +30,15 @@ services:
       PAPERLESS_OCR_OUTPUT_TYPE: ${PAPERLESS_OCR_OUTPUT_TYPE}
       PAPERLESS_SECRET_KEY: ${PAPERLESS_SECRET_KEY}
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      test:
+        [
+          "CMD-SHELL",
+          "curl -f http://localhost:8000 >/dev/null 2>&1 && timeout 10 ls /usr/src/paperless/consume >/dev/null 2>&1 || exit 1"
+        ]
       interval: 30s
-      timeout: 10s
+      timeout: 15s
       retries: 5
+      start_period: 60s
     networks:
       - dokploy-network
 
