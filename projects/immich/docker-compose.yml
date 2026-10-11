@@ -32,7 +32,7 @@ services:
       UPLOAD_LOCATION: ${UPLOAD_LOCATION}
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:2283/server-info/ping"]
+      test: ["CMD", "curl", "-f", "http://localhost:2283/api/server/ping"]
       interval: 30s
       timeout: 10s
       retries: 3
