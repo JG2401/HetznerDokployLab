@@ -48,7 +48,7 @@ services:
       start_period: 60s
 
   immich-machine-learning:
-    image: ghcr.io/immich-app/immich-machine-learning:v3.1.0
+    image: ghcr.io/immich-app/immich-machine-learning:v3.3.1
     deploy:
       resources:
         limits:
