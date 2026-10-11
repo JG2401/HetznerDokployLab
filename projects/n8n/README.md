@@ -10,11 +10,11 @@
 
 - N8N_HOST: same as host in #[domains](#domains)
 - N8N_PORT: #default `5678`
-- N8N_PROTOCOL: #default: `http`
+- N8N_PROTOCOL: #`https` behind the HTTPS proxy
 - NODE_ENV: #default: `production`
 - WEBHOOK_URL: #default: `https://${N8N_HOST}/`
 - GENERIC_TIMEZONE: #local time zone - example: `Europe/Berlin`
-- N8N_SECURE_COOKIE: #default `false`
+- N8N_SECURE_COOKIE: #`true` behind the HTTPS proxy
 
 ### Domains
 

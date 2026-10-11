@@ -7,11 +7,11 @@ services:
     environment:
       - N8N_HOST=${N8N_HOST}
       - N8N_PORT=${N8N_PORT}
-      - N8N_PROTOCOL=http
+      - N8N_PROTOCOL=https
       - NODE_ENV=production
       - WEBHOOK_URL=https://${N8N_HOST}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
-      - N8N_SECURE_COOKIE=false
+      - N8N_SECURE_COOKIE=true
       - N8N_RESTRICT_FILE_ACCESS_TO=/home/node
     volumes:
       - /opt/media/storagebox/paperless/consume:/home/node/paperless/consume:rw
