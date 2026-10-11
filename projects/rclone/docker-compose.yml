@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   rclone-seedbox:
     image: rclone/rclone:1.75.1
