@@ -2,7 +2,7 @@ services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:2.37.1
     restart: unless-stopped
-    ports:
+    expose:
       - 80
     environment:
       - TZ=Europe/Berlin
