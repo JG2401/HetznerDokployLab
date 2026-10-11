@@ -19,13 +19,6 @@ updates:
       interval: "weekly"
     labels: 
       - "immich"
-  #n8n
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/n8n"
-    schedule:
-      interval: "weekly"
-    labels: 
-      - "n8n"
   #paperless
   - package-ecosystem: "docker-compose"
     directory: "/projects/paperless"
