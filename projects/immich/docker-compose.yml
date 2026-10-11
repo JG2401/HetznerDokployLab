@@ -75,7 +75,11 @@ services:
 
   immich-database:
     image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
-
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 2G
     volumes:
       - immich-postgres:/var/lib/postgresql/data
     environment:

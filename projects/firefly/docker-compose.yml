@@ -1,6 +1,11 @@
 services:
   firefly:
     image: fireflyiii/core:version-6.6.2
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1.5G
     hostname: app
     container_name: firefly_iii_core
     restart: unless-stopped

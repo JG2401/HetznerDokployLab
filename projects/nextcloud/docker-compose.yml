@@ -1,6 +1,11 @@
 services:
   nextcloud:
     image: nextcloud:35.0.1
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 2G
     restart: unless-stopped
     labels:
       - rclone.storage=storagebox-crypt
@@ -21,6 +26,11 @@ services:
 
   nextcloud_db:
     image: mariadb
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 1G
     restart: unless-stopped
     volumes:
       - nextcloud_db_data:/var/lib/mysql

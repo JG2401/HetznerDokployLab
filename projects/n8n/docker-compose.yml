@@ -1,6 +1,11 @@
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n:2.29.10
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
     restart: always
     labels:
       - rclone.storage=storagebox-crypt
