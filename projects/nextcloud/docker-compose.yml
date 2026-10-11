@@ -13,7 +13,12 @@ services:
       - traefik.http.routers.nextcloud.middlewares=nextcloud-buffering
     volumes:
       - nextcloud_data:/var/www/html
-      - /opt/media/storagebox/nextcloud:/mnt/storagebox
+      - type: bind
+        source: /opt/media/storagebox/nextcloud
+        target: /mnt/storagebox
+        bind:
+          propagation: rslave
+          create_host_path: false
     healthcheck:
       test:
         [

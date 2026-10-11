@@ -11,10 +11,30 @@ services:
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /opt/media/storagebox/paperless/data:/usr/src/paperless/data
-      - /opt/media/storagebox/paperless/media:/usr/src/paperless/media
-      - /opt/media/storagebox/paperless/export:/usr/src/paperless/export
-      - /opt/media/storagebox/paperless/consume:/usr/src/paperless/consume
+      - type: bind
+        source: /opt/media/storagebox/paperless/data
+        target: /usr/src/paperless/data
+        bind:
+          propagation: rslave
+          create_host_path: false
+      - type: bind
+        source: /opt/media/storagebox/paperless/media
+        target: /usr/src/paperless/media
+        bind:
+          propagation: rslave
+          create_host_path: false
+      - type: bind
+        source: /opt/media/storagebox/paperless/export
+        target: /usr/src/paperless/export
+        bind:
+          propagation: rslave
+          create_host_path: false
+      - type: bind
+        source: /opt/media/storagebox/paperless/consume
+        target: /usr/src/paperless/consume
+        bind:
+          propagation: rslave
+          create_host_path: false
     environment:
       PAPERLESS_REDIS: ${PAPERLESS_REDIS}
       PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE}

@@ -19,7 +19,13 @@ services:
       - N8N_SECURE_COOKIE=true
       - N8N_RESTRICT_FILE_ACCESS_TO=/home/node
     volumes:
-      - /opt/media/storagebox/paperless/consume:/home/node/paperless/consume:rw
+      - type: bind
+        source: /opt/media/storagebox/paperless/consume
+        target: /home/node/paperless/consume
+        read_only: false
+        bind:
+          propagation: rslave
+          create_host_path: false
       - n8n_data:/home/node/.n8n
     healthcheck:
       test:

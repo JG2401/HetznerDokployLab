@@ -9,7 +9,12 @@ services:
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /opt/media/storagebox/immich/library:/usr/src/app/upload
+      - type: bind
+        source: /opt/media/storagebox/immich/library
+        target: /usr/src/app/upload
+        bind:
+          propagation: rslave
+          create_host_path: false
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       immich-redis:

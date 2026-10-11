@@ -12,7 +12,12 @@ services:
     labels:
       - rclone.storage=storagebox-crypt
     volumes:
-      - /opt/media/storagebox/firefly/upload:/var/www/html/storage/upload
+      - type: bind
+        source: /opt/media/storagebox/firefly/upload
+        target: /var/www/html/storage/upload
+        bind:
+          propagation: rslave
+          create_host_path: false
     healthcheck:
       test:
         [
