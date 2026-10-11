@@ -16,10 +16,11 @@
 - PAPERLESS_URL: #same as [domains](#domains) host
 - PAPERLESS_ALLOWED_HOSTS: 
 - PAPERLESS_DBHOST: #db container-name
+- PAPERLESS_DBNAME: #default: `paperless`
+- PAPERLESS_DBUSER:
 - PAPERLESS_DBPASS: #same as db POSTGRES_PASSWORD
-- POSTGRES_DB: #default: `paperless`
-- POSTGRES_USER: 
-- POSTGRES_PASSWORD: #database password - same as PAPERLESS_DBPASS
+- PAPERLESS_OCR_OUTPUT_TYPE:
+- PAPERLESS_SECRET_KEY:
 
 ### Domains
 
