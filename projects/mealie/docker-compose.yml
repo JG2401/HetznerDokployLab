@@ -1,6 +1,6 @@
 services:
   mealie:
-    image: ghcr.io/mealie-recipes/mealie:v3.25.1
+    image: ghcr.io/mealie-recipes/mealie:v3.28.0
     deploy:
       resources:
         limits:
