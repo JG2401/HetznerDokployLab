@@ -1,6 +1,6 @@
 services:
   paperless:
-    image: ghcr.io/paperless-ngx/paperless-ngx:3.2.1
+    image: ghcr.io/paperless-ngx/paperless-ngx:3.3.2
     deploy:
       resources:
         limits:
