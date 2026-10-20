@@ -26,13 +26,13 @@ updates:
       interval: "weekly"
     labels: 
       - "paperless"
-  #jellyseer
+  #seer
   - package-ecosystem: "docker-compose"
-    directory: "/projects/jellyseer"
+    directory: "/projects/seer"
     schedule:
       interval: "weekly"
     labels: 
-      - "jellyseer"
+      - "seer"
   #jellyfin
   - package-ecosystem: "docker-compose"
     directory: "/projects/jellyfin"
