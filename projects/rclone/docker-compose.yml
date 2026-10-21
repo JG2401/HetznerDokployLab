@@ -1,6 +1,6 @@
 services:
   rclone-seedbox:
-    image: rclone/rclone:1.75.1
+    image: rclone/rclone:1.75.2
     container_name: rclone-seedbox
     restart: unless-stopped
 
@@ -58,7 +58,7 @@ services:
       start_period: 60s
 
   rclone-storagebox-crypt:
-    image: rclone/rclone:1.75.1
+    image: rclone/rclone:1.75.2
     container_name: rclone-storagebox-crypt
     restart: unless-stopped
 
