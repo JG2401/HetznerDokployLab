@@ -35,7 +35,7 @@ services:
       REDIS_DBINDEX: ${REDIS_DBINDEX}
       TZ: ${TZ}
       UPLOAD_LOCATION: ${UPLOAD_LOCATION}
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test:
         [
@@ -60,7 +60,7 @@ services:
       REDIS_HOSTNAME: ${REDIS_HOSTNAME}
       REDIS_PORT: ${REDIS_PORT}
       REDIS_DBINDEX: ${REDIS_DBINDEX}
-    restart: always
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3003/ping"]
       interval: 30s
@@ -81,7 +81,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: always
+    restart: unless-stopped
 
   immich-database:
     image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
@@ -118,7 +118,7 @@ services:
         '-c',
         'wal_compression=on',
       ]
-    restart: always
+    restart: unless-stopped
 
 networks:
   dokploy-network:
