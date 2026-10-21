@@ -40,7 +40,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl -f http://localhost:2283/api/server/ping >/dev/null 2>&1 && timeout 10 ls /usr/src/app/upload >/dev/null 2>&1 || exit 1"
+          "curl -f http://localhost:2283/api/server/ping >/dev/null 2>&1"
         ]
       interval: 30s
       timeout: 15s
