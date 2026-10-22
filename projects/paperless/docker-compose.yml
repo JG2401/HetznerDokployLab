@@ -8,8 +8,6 @@ services:
           memory: 1.5G
     container_name: paperless
     restart: unless-stopped
-    labels:
-      - rclone.storage=storagebox-crypt
     volumes:
       - type: bind
         source: /opt/media/storagebox/paperless/data

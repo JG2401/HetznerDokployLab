@@ -9,8 +9,6 @@ services:
     hostname: app
     container_name: firefly_iii_core
     restart: unless-stopped
-    labels:
-      - rclone.storage=storagebox-crypt
     volumes:
       - type: bind
         source: /opt/media/storagebox/firefly/upload

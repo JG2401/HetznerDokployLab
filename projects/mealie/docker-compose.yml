@@ -6,8 +6,6 @@ services:
         limits:
           cpus: "1.0"
           memory: 1G
-    labels:
-      - rclone.storage=storagebox-crypt
     volumes:
       - type: bind
         source: /opt/media/storagebox/mealie

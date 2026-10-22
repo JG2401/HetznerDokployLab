@@ -8,7 +8,6 @@ services:
           memory: 2G
     restart: unless-stopped
     labels:
-      - rclone.storage=storagebox-crypt
       - traefik.http.middlewares.nextcloud-buffering.buffering.maxRequestBodyBytes=0
       - traefik.http.routers.nextcloud.middlewares=nextcloud-buffering
     volumes:

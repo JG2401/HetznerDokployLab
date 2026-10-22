@@ -6,8 +6,6 @@ services:
         limits:
           cpus: "1.25"
           memory: 2G
-    labels:
-      - rclone.storage=storagebox-crypt
     volumes:
       - type: bind
         source: /opt/media/storagebox/immich/library
