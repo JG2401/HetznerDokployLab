@@ -5,13 +5,6 @@
 
 version: 2
 updates:
-  #firefly
-  - package-ecosystem: "docker-compose"
-    directory: "/projects/firefly"
-    schedule:
-      interval: "weekly"
-    labels: 
-      - "firefly"
   #immich
   - package-ecosystem: "docker-compose"
     directory: "/projects/immich"
