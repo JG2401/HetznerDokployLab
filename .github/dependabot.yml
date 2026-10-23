@@ -89,3 +89,10 @@ updates:
       interval: "weekly"
     labels: 
       - "audiobookshelf"
+  #wallos
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/wallos"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "wallos"
