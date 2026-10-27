@@ -1,0 +1,11 @@
+services:
+  any-sync-bundle:
+    image: ghcr.io/grishy/any-sync-bundle:1.7.0-2026-10-12
+    restart: unless-stopped
+    ports:
+      - "33010:33010"
+      - "33020:33020/udp"
+    volumes:
+      - /opt/media/storagebox/anytype:/data
+    environment:
+      ANY_SYNC_BUNDLE_INIT_EXTERNAL_ADDRS: ${SERVER_IP}
