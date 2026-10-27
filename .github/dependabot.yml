@@ -110,3 +110,10 @@ updates:
       interval: "weekly"
     labels:
       - "anytype"
+  #uptime-kuma
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/uptime-kuma"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "uptime-kuma"
