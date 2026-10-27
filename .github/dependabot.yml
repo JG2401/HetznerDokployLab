@@ -96,3 +96,17 @@ updates:
       interval: "weekly"
     labels:
       - "wallos"
+  #ntfy
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/ntfy"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "ntfy"
+  #anytype
+  - package-ecosystem: "docker-compose"
+    directory: "/projects/anytype"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "anytype"
